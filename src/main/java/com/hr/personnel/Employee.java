@@ -14,7 +14,7 @@ public class Employee {
         return "name = "+this.name+", hireDate = "+this.hireDate;
     }
     public String work(){
-        return this.name+"worked";
+        return this.name+" worked";
     }
 
 }
