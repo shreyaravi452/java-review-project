@@ -6,9 +6,14 @@ public class Employee {
     private String name;
     private LocalDate hireDate;
 
+    public Employee(){
+    }
     public Employee(String n, String d){
         this.name = n;
         this.hireDate = LocalDate.parse(d);
+    }
+    public String getName(){
+        return this.name;
     }
     public String getEmployeeInfo(){
         return "name = "+this.name+", hireDate = "+this.hireDate;
