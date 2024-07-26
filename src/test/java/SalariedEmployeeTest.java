@@ -26,7 +26,7 @@ public class SalariedEmployeeTest {
 
     @Test
     public void testMonthlyTaxToPay(){
-        double expectedInfo = 34000*0.30;
+        double expectedInfo = (34000*0.30)-250;
         assertEquals(expectedInfo, salariedEmployee.computeMonthlyTaxToPay(), 0.1);
     }
 }

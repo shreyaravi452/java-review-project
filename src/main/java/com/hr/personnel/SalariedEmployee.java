@@ -26,6 +26,8 @@ public class SalariedEmployee extends Employee{
 
     @Override
     public double computeMonthlyTaxToPay() {
-        return computeMonthlyCompensation()*SALARIED_TAX_RATE;
+        if(computeMonthlyCompensation()*SALARIED_TAX_RATE > DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION)
+            return (computeMonthlyCompensation()*SALARIED_TAX_RATE)-DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION;
+        return 0.0;
     }
 }

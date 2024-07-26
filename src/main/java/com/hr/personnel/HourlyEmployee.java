@@ -34,6 +34,8 @@ public class HourlyEmployee extends Employee{
 
     @Override
     public double computeMonthlyTaxToPay() {
-        return computeMonthlyCompensation()*HOURLY_TAX_RATE;
+        if(computeMonthlyCompensation()*HOURLY_TAX_RATE > DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION)
+            return (computeMonthlyCompensation()*HOURLY_TAX_RATE)-DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION;
+        return 0.0;
     }
 }

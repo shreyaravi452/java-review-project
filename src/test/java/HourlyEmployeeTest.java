@@ -27,7 +27,7 @@ public class HourlyEmployeeTest {
 
     @Test
     public void testComputeMonthlyTaxToPay(){
-        double expectedInfo = 60*250*0.25;
+        double expectedInfo = (60*250*0.25)-250;
         assertEquals(expectedInfo, hourlyEmployee.computeMonthlyTaxToPay(), 0.1);
     }
 }
