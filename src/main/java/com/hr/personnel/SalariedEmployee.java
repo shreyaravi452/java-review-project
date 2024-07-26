@@ -13,4 +13,19 @@ public class SalariedEmployee extends Employee{
     public void setMonthlySalary(double d) {
         this.monthlySalary = d;
     }
+
+    @Override
+    public String getEmployeeInfo() {
+        return ""+this.monthlySalary+" "+super.getName()+" "+super.getHireDate();
+    }
+
+    @Override
+    public double computeMonthlyCompensation() {
+        return this.monthlySalary;
+    }
+
+    @Override
+    public double computeMonthlyTaxToPay() {
+        return computeMonthlyCompensation()*SALARIED_TAX_RATE;
+    }
 }

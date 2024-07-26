@@ -13,8 +13,38 @@ public class DepartmentTest {
     @Before
     public void setUp() {
         department = new Department("HR", "Headquarters");
-        employee1 = new Employee("Shreya", "2018-06-15");
-        employee2 = new Employee("Diya", "2019-01-20");
+        employee1 = new Employee("Shreya", "2018-06-15") {
+            @Override
+            public double computeMonthlyTaxToPay() {
+                return 0;
+            }
+
+            @Override
+            public String getEmployeeInfo() {
+                return "";
+            }
+
+            @Override
+            public double computeMonthlyCompensation() {
+                return 0;
+            }
+        };
+        employee2 = new Employee("Diya", "2019-01-20") {
+            @Override
+            public double computeMonthlyTaxToPay() {
+                return 0;
+            }
+
+            @Override
+            public String getEmployeeInfo() {
+                return "";
+            }
+
+            @Override
+            public double computeMonthlyCompensation() {
+                return 0;
+            }
+        };
     }
 
     @Test

@@ -11,7 +11,22 @@ public class Department {
         this.location = l;
     }
     public void addEmployee(Employee employee){
-        this.employees[this.currentIndex] = new Employee();
+        this.employees[this.currentIndex] = new Employee() {
+            @Override
+            public double computeMonthlyTaxToPay() {
+                return 0;
+            }
+
+            @Override
+            public String getEmployeeInfo() {
+                return ""+getName()+" "+getHireDate();
+            }
+
+            @Override
+            public double computeMonthlyCompensation() {
+                return 0;
+            }
+        };
         this.employees[this.currentIndex] = employee;
         this.currentIndex++;
     }
@@ -25,5 +40,13 @@ public class Department {
                 count++;
         }
         return count;
+    }
+    public double computeDepartmentMonthlyTotalCompensation(){
+        double total = 0.0;
+        for(int i=0;i<this.employees.length;i++){
+            if(this.employees[i]!=null)
+                total+=this.employees[i].computeMonthlyCompensation();
+        }
+        return total;
     }
 }
